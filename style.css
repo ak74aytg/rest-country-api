@@ -1,0 +1,73 @@
+.select-box{
+    display: flex;
+    width: 170px;
+    flex-direction: column;
+}
+
+.your-class::-webkit-input-placeholder {
+    color: hsl(200, 15%, 8%);
+ }
+
+.select-box .options-container{
+    background: hsla(207, 26%, 22%, 1);
+    color: white;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 4px;
+    overflow: hidden;
+    order: 1;
+    z-index: 100;
+}
+
+.select-box .option, .selected{
+    padding: 12px 14px;
+    cursor: pointer;
+}
+
+.selected{
+    background: hsla(207, 26%, 22%, 1);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    color: white;
+    position: relative;
+    order: 0;
+}
+
+.selected::after{
+    content: "";
+    background: url('./arrow_black.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 16px;
+    right: 10%;
+    top: -12px !important;
+    transition: all 0.4s;
+    transform: rotateX(180deg);
+}
+
+
+.select-box .options-container.active + .selected::after{
+    transform: rotateX(0);
+    top: 13px !important;
+}
+
+.select-box .option:hover{
+    background: #414b57;
+}
+
+.select-box label{
+    cursor: pointer;
+}
+
+.select-box .option .radio{
+    display: none;
+}
+
+.select-box .options-container.active{
+    max-height: 240px;
+    opacity: 1;
+}

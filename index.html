@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <h1>Where in the world?</h1>
+        <div class="dark mode" style="cursor: pointer;" id="dark">
+            <i class="fa-solid fa-moon"></i>Dark Mode
+        </div>
+    </header>
+
+
+    <main class="main">
+        <div class="search"> 
+           <div class="input">
+            <i class="fa fa-search"></i>
+            <input type="text" class="enter" placeholder="Search for a country...">
+           </div>
+            <div class="select-box">
+                <div class="options-container">
+                    <div class="option">
+                        <input type="radio" class="radio" id="Africa" name="regions">
+                        <label>Africa</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="America" name="regions">
+                        <label>Americas</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="Asia" name="regions">
+                        <label>Asia</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="Europe" name="regions">
+                        <label>Europe</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" class="radio" id="Oceania" name="regions">
+                        <label>Oceania</label>
+                    </div>
+                </div>
+                <div class="selected">Filter by Region</div>
+            </div>
+        </div>
+    </main>
+
+    <main class="hidden check">
+        <div class="search back">
+            <div class="backk" style="cursor: pointer;">
+                <i style="margin-right:1rem" class="fa-solid fa-arrow-left"></i><span style="margin-right:.66rem">Back</span>
+            </div>
+        </div>
+        <div class="roww">
+            
+        </div>
+    </main>
+
+
+    <div class="container"> 
+        <div class="row">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        const selected = document.querySelector('.selected');
+        const optionsContainer = document.querySelector('.options-container');
+        const optionsList = document.querySelectorAll('.option');
+
+        selected.addEventListener('click', ()=>{
+            optionsContainer.classList.toggle('active')
+        })
+
+        optionsList.forEach(o =>{
+            o.addEventListener('click', ()=>{
+                selected.innerHTML = o.querySelector("label").innerHTML;
+                optionsContainer.classList.remove('active');
+            })
+        })
+    </script>
+    <script src="./darkMode.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
