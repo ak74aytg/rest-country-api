@@ -12,6 +12,18 @@ function walk(obj) {
     return ans;
   }
 
+  
+    const loaderDiv = document.getElementById('loader');
+
+    function showloader(){
+        loaderDiv.classList.add('show');
+    }
+
+    function hideloader(){
+        loaderDiv.classList.remove('show');
+    }
+
+
 //   function neighbour(acc){
 //       fetch('https://restcountries.com/v3.1/all')
 //       .then(res => res.json())
@@ -34,9 +46,11 @@ function walk2(obj) {
   }
 
 function loadd(){
+    showloader();
     fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
     .then((data) => {
+        hideloader();
         const row = document.querySelector(".row");
         let output = "";
         data.forEach((nation)=>{
@@ -68,9 +82,11 @@ const options = document.querySelector('.options-container');
 options.addEventListener('click', (e) =>{
     console.log(e.target);
     const regionVal = e.target.querySelector('label').innerHTML;
+    showloader();
     fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
     .then((data) => {
+        hideloader();
         const row = document.querySelector(".row");
         let output = "";
         data.forEach((nation)=>{
@@ -111,9 +127,11 @@ document.querySelector('.enter').addEventListener('keyup', (e)=>{
     if (e.key === "Enter"){
         const input = document.querySelector('.enter').value.replaceAll(' ','').toLowerCase();
         // console.log(input)
+        showloader();
         fetch('https://restcountries.com/v3.1/all')
         .then(res => res.json())
         .then((data) => {
+            hideloader();
             let output = "";
             data.forEach((nation)=>{
                 const country = nation.name.common.replaceAll(' ','').toLowerCase();
