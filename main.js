@@ -80,8 +80,8 @@ function loadd(){
 
 const options = document.querySelector('.options-container');
 options.addEventListener('click', (e) =>{
-    console.log(e.target);
-    const regionVal = e.target.querySelector('label').innerHTML;
+    const regionVal = e.target.innerHTML;
+    console.log(regionVal);
     showloader();
     fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
