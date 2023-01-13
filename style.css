@@ -20,7 +20,7 @@
 
 .select-box .options-container{
     background: var(--dBlueEl);
-    color: white;
+    color: var(--dTexlElwhite);
     max-height: 0;
     width: 100%;
     opacity: 0;
@@ -40,7 +40,7 @@
     background: var(--dBlueEl);
     border-radius: 4px;
     margin-bottom: 8px;
-    color: white;
+    color: var(--dTexlElwhite);
     position: relative;
     order: 0;
 }

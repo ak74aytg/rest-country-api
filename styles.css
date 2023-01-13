@@ -5,6 +5,7 @@
     --lGreyInput: hsl(0, 0%, 52%);
     --lGreyBg: hsl(0, 0%, 90%);
     --dTexlElwhite: hsl(0, 0%, 100%);
+    --notSoWhite: rgba(255, 255, 255, 0.766);
 }
 ::placeholder {
     color: var(--dTexlElwhite);
@@ -20,6 +21,7 @@
     display: none;
     background: rgba(0, 0, 0, 0.505) url('./preloader.gif') no-repeat center;
     background-size: 4%;
+    color: var(--notSoWhite);
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -121,7 +123,8 @@ main{
     /* flex-direction: ; */
 }
 .neigh{
-    background: var(--dBlueEl);
+    background: var(--dBlueEl) !important;
+    color: var(--notSoWhite);
     padding: 0rem 1rem;
     padding-top: .68rem;
     font-size: 12px;
@@ -171,11 +174,14 @@ main{
     font-size: 12px !important;
     font-weight: 600 !important;
     margin-bottom: .5rem;
-    color: rgba(255, 255, 255, 0.766);
+    color: var(--notSoWhite) !important;
 }
 .pop > span{
     font-weight: 300;
     font-size: 12px;
+}
+.all > div > h6 > small {
+    color: var(--notSoWhite) !important;
 }
 
 
@@ -244,7 +250,7 @@ main{
         font-weight: 600 !important;
     }
     .all > div > h6 > small {
-        /* color: rgba(255, 255, 255, 0.664) !important; */
+        color: var(--notSoWhite) !important;
         font-weight: 400 !important;
     }
     .border{
