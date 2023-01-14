@@ -24,15 +24,6 @@ function walk(obj) {
     }
 
 
-//   function neighbour(acc){
-//       fetch('https://restcountries.com/v3.1/all')
-//       .then(res => res.json())
-//       .then((data) => {
-//         let an;
-        
-//     })
-//   }
-
 function walk2(obj) {
     ans = "";
     for (var key in obj) {
@@ -80,8 +71,12 @@ function loadd(){
 
 const options = document.querySelector('.options-container');
 options.addEventListener('click', (e) =>{
-    const regionVal = e.target.innerHTML;
-    console.log(regionVal);
+    let regionVal = e.target;
+    if(e.target.classList.contains('option')){
+        regionVal = e.target.childNodes[3].innerHTML;
+    }else if(e.target.classList.contains('label')){
+        regionVal = e.target.innerHTML;
+    }
     showloader();
     fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
@@ -117,9 +112,7 @@ options.addEventListener('click', (e) =>{
 document.querySelector('.back').addEventListener('click', ()=>{
     document.querySelector('.main').classList.remove('hidden');
     document.querySelector('.container').classList.remove('hidden');
-    loadd();
     document.querySelector('.enter').value = "";
-    document.querySelector('.selected').innerHTML = "Filter by Region";
     document.querySelector('.check').classList.add('hidden');
 })
 
